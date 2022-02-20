@@ -7,9 +7,6 @@
 [sendemail]
 	sendmailcmd = ~/usr/bin/ssh-sendmail.sh
 
-[commit]
-	gpgsign = true
-
 # Automatically replace https github remotes with ssh.
 [url "git@gitlab.com:"]
 	insteadOf = https://gitlab.com/
