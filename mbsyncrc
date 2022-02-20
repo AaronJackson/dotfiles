@@ -1,0 +1,21 @@
+IMAPAccount personal
+PipelineDepth 1
+Tunnel "ssh aaron@vinci.rhwyd.co.uk /usr/libexec/dovecot/imap 2>/dev/null"
+
+IMAPStore personal-remote
+Account personal
+
+MaildirStore personal-local
+Path ~/Maildir/personal/
+Inbox ~/Maildir/personal/INBOX
+SubFolders Legacy
+
+Channel personal
+Far :personal-remote:
+Near :personal-local:
+Create Both
+Sync All
+Expunge Both
+SyncState *
+Patterns *
+
