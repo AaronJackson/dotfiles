@@ -53,3 +53,10 @@ function oath () {
 
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
+
+function uodvpn () {
+    # I know, this is disgusting, but Connect Tunnel won't open my
+    # browser for it? So, I grep out the link and then click it...
+    DISPLAY= sudo strace -f -s 4096 startct 2> \
+	   >(grep execve | grep dundee)
+}
