@@ -55,6 +55,12 @@ alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 
 function uodvpn () {
+    (
+	sleep 30
+	sudo resolvectl dns tun0 134.36.2.60 134.36.12.60
+	sudo resolvectl domain tun0 dundee.ac.uk
+    ) &
+
     # I know, this is disgusting, but Connect Tunnel won't open my
     # browser for it? So, I grep out the link and then click it...
     DISPLAY= sudo strace -f -s 4096 startct 2> \
