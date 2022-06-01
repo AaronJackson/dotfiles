@@ -3,4 +3,7 @@ Host *
 
 Host vinci vinci.rhwyd.co.uk
     ForwardAgent yes
+    ControlPath ~/.ssh/cm-vinci
+    ControlMaster auto
+    ControlPersist 60m
 
